@@ -21,30 +21,42 @@ html, body {
     min-height: 680px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
+    background-color: #0e0e0e;
 }
 
 /* Background img and overlays */
 .hero__bg {
     position: absolute;
-    inset: 0;
-    background-image: url('bg.jpg');
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg.jpg');
     background-size: cover;
     background-position: center center;
-    z-index: 0;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
 
 .hero__bg:after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right,  rgba(8,8,8,0.72) 0%, rgba(8,8,8,0.30) 55%, rgba(8,8,8,0.15) 100%),
-    linear-gradient(to bottom, rgba(8,8,8,0.50) 0%, rgba(8,8,8,0.10) 50%, rgba(8,8,8,0.65) 100%);;
+    background: linear-gradient(to right, rgba(14, 14, 14, 0.85) 0%, rgba(14, 14, 14, 0.4) 50%, transparent 100%),
+                linear-gradient(to top, rgba(14, 14, 14, 0.95) 0%, rgba(14, 14, 14, 0.6) 25%, rgba(14, 14, 14, 0.3) 100%);
+    z-index: 2;
+}
+
+.nav,
+.hero__body,
+.hero__stats {
+    position: relative;
+    z-index: 10;
 }
 /* Nav */
 .nav {
-    position: relative;
-    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,7 +64,7 @@ html, body {
 }
 
 .nav__logo {
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -73,7 +85,7 @@ html, body {
 }
 
 .nav__links a {
-    font-size: 13.5px;
+    font-size: 15px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.80);
     text-decoration: none;
@@ -89,10 +101,10 @@ html, body {
     background: transparent;
     border: 1.5px solid rgba(200, 168, 75, 0.65);
     color: #C8A84B;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
-    padding: 9px 22px;
+    padding: 10px 24px;
     border-radius: 50px;
     cursor: pointer;
     letter-spacing: 0.01em;
@@ -106,14 +118,12 @@ html, body {
 
 /* Hero Body */
 .hero__body {
-    position:relative;
-    z-index: 10;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 52px;
-    max-width: 680px;
+    max-width: 900px;
 }
 
 .hero__eyebrow {
@@ -139,7 +149,7 @@ html, body {
 }
 
 .hero__title {
-    font-size: clamp(52px, 6.5vw, 88px);
+    font-size: clamp(52px, 6.5vw, 86px);
     font-weight: 900;
     line-height: 1.0;
     letter-spacing: -0.025em;
@@ -151,8 +161,8 @@ html, body {
     font-size: 14.5px;
     font-weight: 400;
     line-height: 1.68;
-    color: rgba(255, 255, 255, 0,60);
-    max-width: 400px;
+    color: rgba(255, 255, 255, 0.60);
+    max-width: 550px;
     margin-bottom: 36px;
 }
 
@@ -164,7 +174,7 @@ html, body {
 
 /* Buttons */
 .btn-gold {
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     background: #C8A84B;
@@ -230,7 +240,7 @@ html, body {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.16em;
-    text-decoration: uppercase;
+    text-transform: uppercase;
     color: rgba(255, 255, 255, 0.38);
 }
 
@@ -239,7 +249,7 @@ html, body {
     position: absolute;
     z-index: 10;
     right: 52px;
-    bottom: 50px;
+    bottom: 62px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -258,6 +268,10 @@ html, body {
     width: 16px;
     color: rgba(255, 255, 255, 0.35);
     animation: bob 1.8s ease-in-out infinite;
+}
+
+.gold {
+    color: #C8A84B;
 }
 
 @keyframes bob {
