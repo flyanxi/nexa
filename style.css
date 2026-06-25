@@ -627,50 +627,73 @@ html, body {
 .advantages__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    gap: 24px; 
+    max-width: 1180px;
+    
+    margin: 0 auto;
 }
 /* card */
 .advantages__card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 14px;
-    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
-    transition: border-color 0.3s, background 0.3s;
+    padding: 48px 32px; 
+    background: #0e0e0e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
 }
 
 .advantages__card:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: #0e0e0e;
     border-color: #C8A84B;
     box-shadow: 0 0 30px rgba(200, 168, 75, 0.08) inset;
+    transform: translateY(-4px);
 }
 /* icon */
 .advantages__icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(200, 168, 75, 0.12);
-    border-radius: 10px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px; /* Отступ от иконки до заголовка */
+    background: rgba(200, 168, 75, 0.08);
+    border: 1px solid rgba(200, 168, 75, 0.2);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #C8A84B;
-    margin-bottom: 28px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.advantages__card:hover .advantages__icon {
+    background: rgba(200, 168, 75, 0.15);
+    border-color: rgba(200, 168, 75, 0.4);
+    transform: scale(1.05);
+}
+
+.advantages__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px; 
 }
 
 .advantages__card-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
-    color: #fff;
     line-height: 1.3;
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0;
 }
 
 .advantages__card-desc {
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.65;
     color: rgba(255, 255, 255, 0.45);
+    margin: 0;
 }
 
 /* process */
@@ -792,5 +815,137 @@ html, body {
     font-size: 13.5px;
     font-weight: 400;
     line-height: 1.7;
+    color: rgba(255, 255, 255, 0.45);
+}
+/* Technologies */
+
+.technologies {
+    background: #131318; 
+    padding: 120px 52px;
+    text-align: center;
+}
+
+.technologies__header,
+.technologies__grid {
+    max-width: 1336px; 
+    margin: 0 auto;
+}
+
+.technologies__header {
+    margin-bottom: 60px;
+}
+
+.technologies__eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.technologies__eyebrow-line {
+    width: 34px;
+    height: 1.5px;
+    background: #C8A84B;
+}
+
+.technologies__eyebrow-text {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: #C8A84B;
+}
+
+.technologies__title {
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+/* Grid Layout */
+.technologies__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: left; 
+}
+
+/* Card Styling */
+.technologies__card {
+    background: #0e0e0e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    gap: 28px;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.technologies__card:hover {
+    background: #0e0e0e;
+    border-color: #C8A84B;
+    box-shadow: 0 0 30px rgba(200, 168, 75, 0.08) inset;
+    transform: translateY(-4px);
+}
+/* Icon Box */
+.technologies__icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(200, 168, 75, 0.08);
+    border: 1px solid rgba(200, 168, 75, 0.2); 
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8A84B;
+    flex-shrink: 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.technologies__card:hover .technologies__icon { 
+    background: rgba(200, 168, 75, 0.15); 
+    border-color: rgba(200, 168, 75, 0.4); 
+    transform: scale(1.05); 
+}
+
+/* Text Content */
+.technologies__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.technologies__card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.technologies__card-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+/* Status Badge */
+.technologies__badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #C8A84B;
+    background: rgba(200, 168, 75, 0.08);
+    padding: 6px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(200, 168, 75, 0.2);
+}
+
+.technologies__card-desc {
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 1.68;
     color: rgba(255, 255, 255, 0.45);
 }
