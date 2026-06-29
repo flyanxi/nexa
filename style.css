@@ -646,7 +646,6 @@ html, body {
 }
 
 .advantages__card:hover {
-    background: #0e0e0e;
     border-color: #C8A84B;
     box-shadow: 0 0 30px rgba(200, 168, 75, 0.08) inset;
     transform: translateY(-4px);
@@ -655,7 +654,7 @@ html, body {
 .advantages__icon {
     width: 64px;
     height: 64px;
-    margin-bottom: 24px; /* Отступ от иконки до заголовка */
+    margin-bottom: 24px;
     background: rgba(200, 168, 75, 0.08);
     border: 1px solid rgba(200, 168, 75, 0.2);
     border-radius: 14px;
