@@ -1147,41 +1147,39 @@ html, body {
 }
 
 /* --- Секция Contact --- */
-
 .contact {
     position: relative;
-    padding: 120px 52px;
+    padding: 100px 20px;
     background: #0e0e0e;
     overflow: hidden;
 }
 
-/* Фон с изображением */
-.contact .contact__bg {
+/* Фон */
+.contact__bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/contact-bg.jpg'); /* Убедитесь, что путь верный */
+    background-image: url('../images/contact-bg.jpg'); 
     background-size: cover;
     background-position: center;
     z-index: 0;
 }
 
-/* Затемняющий слой для фона */
-.contact .contact__bg::after {
+.contact__bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(14, 14, 14, 0.95), rgba(14, 14, 14, 0.8));
+    background: linear-gradient(to bottom, rgba(14, 14, 14, 0.9), rgba(14, 14, 14, 0.95));
     z-index: 1;
 }
 
-/* Контейнер контента */
+/* Контейнер */
 .contact .contact__container {
     position: relative;
     z-index: 2;
-    max-width: 500px;
+    max-width: 700px; /* Текст теперь шире */
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -1189,62 +1187,67 @@ html, body {
     gap: 40px;
 }
 
-/* Заголовок и текст */
-.contact .contact__eyebrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-}
-
+/* Заголовок */
 .contact .contact__title {
-    font-size: clamp(36px, 4vw, 54px);
+    font-size: clamp(40px, 6vw, 64px);
     font-weight: 800;
     line-height: 1.1;
     color: #fff;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
-.contact .contact__desc {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.6);
+/* Eyebrow и линии */
+.contact .contact__eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    width: 100%;
+}
+
+.contact .contact__eyebrow .line {
+    height: 1px;
+    background-color: #C8A84B;
+    width: 50px; /* Регулируйте длину линии здесь */
+}
+
+.contact .contact__eyebrow-text {
+    color: #C8A84B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
 }
 
 /* Форма */
 .contact .contact__form {
+    max-width: 500px; 
+    margin: 0 auto;
+    width: 100%;
+    padding: 32px;
+    background: rgba(19, 19, 24, 0.6);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: rgba(19, 19, 24, 0.6);
-    padding: 40px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact .contact__form input {
     width: 100%;
-    padding: 18px 20px;
-    background: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    background: #0e0e0e; 
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 12px;
     color: white;
-    font-family: 'Inter', sans-serif;
 }
 
-/* Кнопка (изолирована селектором .contact) */
 .contact .btn-gold {
     width: 100%;
-    padding: 18px;
+    padding: 16px;
     background: #C8A84B;
-    color: #0e0e0e;
+    color: #000;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
-}
-
-.contact .btn-gold:hover {
-    background: #e0be5a;
 }
