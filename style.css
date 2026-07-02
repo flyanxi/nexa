@@ -1146,7 +1146,7 @@ html, body {
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Секция Contact --- */
+/* Section Contact */
 .contact {
     position: relative;
     padding: 100px 20px;
@@ -1154,7 +1154,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Фон */
+/* background */
 .contact__bg {
     position: absolute;
     top: 0;
@@ -1175,11 +1175,11 @@ html, body {
     z-index: 1;
 }
 
-/* Контейнер */
+/* Container */
 .contact .contact__container {
     position: relative;
     z-index: 2;
-    max-width: 700px; /* Текст теперь шире */
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -1187,7 +1187,7 @@ html, body {
     gap: 40px;
 }
 
-/* Заголовок */
+/* Headline */
 .contact .contact__title {
     font-size: clamp(40px, 6vw, 64px);
     font-weight: 800;
@@ -1196,7 +1196,7 @@ html, body {
     margin: 0;
 }
 
-/* Eyebrow и линии */
+/* Eyebrow and line */
 .contact .contact__eyebrow {
     display: flex;
     align-items: center;
@@ -1208,7 +1208,7 @@ html, body {
 .contact .contact__eyebrow .line {
     height: 1px;
     background-color: #C8A84B;
-    width: 50px; /* Регулируйте длину линии здесь */
+    width: 50px; 
 }
 
 .contact .contact__eyebrow-text {
@@ -1218,14 +1218,14 @@ html, body {
     font-size: 12px;
 }
 
-/* Форма */
+/* Form */
 .contact .contact__form {
     max-width: 500px; 
     margin: 0 auto;
     width: 100%;
-    padding: 32px;
-    background: rgba(19, 19, 24, 0.6);
-    border-radius: 20px;
+    padding: 0; 
+    background: transparent !important; 
+    border: none !important; 
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1233,21 +1233,52 @@ html, body {
 
 .contact .contact__form input {
     width: 100%;
-    padding: 16px;
-    background: #0e0e0e; 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.05); 
     border-radius: 12px;
     color: white;
+    transition: border-color 0.3s ease;
 }
 
+/* Gold outline on focus */
+.contact .contact__form input:focus {
+    outline: none;
+    border-color: #C8A84B;
+}
+
+/* button */
 .contact .btn-gold {
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     background: #C8A84B;
     color: #000;
     border: none;
     border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.3s;
+}
+
+.contact .btn-gold:hover {
+    background: #e0be5a;
+}
+
+.contact__success {
+    color: #fff;
+    font-size: 18px;
+    padding: 30px;
+    background: rgba(200, 168, 75, 0.05);
+    border: 1px solid rgba(200, 168, 75, 0.4); 
+    border-radius: 12px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+.contact__success b {
+    color: #C8A84B;
 }
